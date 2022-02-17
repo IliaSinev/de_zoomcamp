@@ -1,10 +1,27 @@
 version: 2
 
+#sources:
+ #   - name: staging
+ #   database: datatalks-de-zoomcamp
+ #   schema: tripdata_all
+
+#    tables:
+ #       - name: green_tripdata
+  #      - name: yellow_tripdata
+
 sources:
     - name: staging
-        database: datatalks-de-zoomcamp
-        schema: tripdata_all
+      #For bigquery:
+      database: datatalks-de-zoomcamp
 
-        tables:
-            - name: green_tripdata
-            - name: yellow_tripdata
+      # For postgres:
+ #     database: production
+
+      schema: trips_data_all
+
+      # loaded_at_field: record_loaded_at
+      tables:
+        - name: green_tripdata
+        - name: yellow_tripdata
+         # freshness:
+           # error_after: {count: 6, period: hour}
