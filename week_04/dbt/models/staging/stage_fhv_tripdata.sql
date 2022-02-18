@@ -23,4 +23,4 @@ select
     SR_Flag
 
 from tripdata
-where rn = 1
+--where rn = 1
