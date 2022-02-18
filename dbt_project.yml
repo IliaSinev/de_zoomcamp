@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'taxi_rides_ny'
 version: '1.0.0'
 config-version: 2
 
@@ -12,14 +12,14 @@ profile: 'default'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["week_03/dbt/models"]
-analysis-paths: ["week_03/dbt/analyses"]
-test-paths: ["week_03/dbt/tests"]
-seed-paths: ["week_03/dbt/seeds"]
-macro-paths: ["week_03/dbt/macros"]
-snapshot-paths: ["week_03/dbt/snapshots"]
+model-paths: ["week_04/dbt/models"]
+analysis-paths: ["week_04/dbt/analyses"]
+test-paths: ["week_04/dbt/tests"]
+seed-paths: ["week_04/dbt/seeds"]
+macro-paths: ["week_04/dbt/macros"]
+snapshot-paths: ["week_04/dbt/snapshots"]
 
-target-path: "week_03/dbt/target"  # directory which will store compiled SQL files
+target-path: "week_04/dbt/target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
@@ -32,7 +32,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
+  taxi_rides_ny:
     # Applies to all files under models/example/
-    example:
-      materialized: view
+
+vars:
+  payment_type_values: [1, 2, 3, 4, 5, 6]
+
